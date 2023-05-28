@@ -36,7 +36,7 @@ class webrtcServer(BaseHTTPRequestHandler):
 
 thread = threading.Thread(target = socket.start_socket_server)
 thread.start()
-server = HTTPServer(('localhost',8787), webrtcServer)
+server = HTTPServer(('172.232.68.4',8787), webrtcServer)
 print(f"[HTTP server] now runnig on PORT: 8787")
 server.serve_forever()
 server.server_close()

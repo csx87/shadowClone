@@ -1,7 +1,7 @@
 import socket
 
-PORT = 6969
-HOST = "0.0.0.0"
+PORT = 6060
+HOST = "172.232.68.4"
 ADDR = (HOST, PORT)
 FORMAT = "utf-8"
 HEADER = 4
