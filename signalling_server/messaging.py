@@ -1,23 +1,16 @@
 import socket
 import server_info as serv_info
 
-HEADER = serv_info.HEADER
+MSG_LENGTH = serv_info.MSG_LENGTH
 FORMAT = serv_info.FORMAT
 
 def send_message(conn, msg):
     message = msg.encode(FORMAT)
-    msg_length = len(message)
-    send_length = str(msg_length).encode(FORMAT)
-    send_length += b' '*(HEADER - len(send_length))
-    conn.send(send_length)
     conn.send(message)
 
 def recv_message(conn):
     msg = None
-    msg_length = conn.recv(HEADER).decode(FORMAT)
-    if msg_length:
-        msg_length = int(msg_length)
-        msg = conn.recv(msg_length).decode(FORMAT)
+    msg = conn.recv(MSG_LENGTH).decode(FORMAT)
     return msg
 
 def send_offer(conn, offerSDP):
