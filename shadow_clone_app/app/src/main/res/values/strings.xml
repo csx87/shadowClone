@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">shadow_clone</string>
+    <string name="IP">172.232.68.4</string>
+    <string name="PING_MESSAGE">PING</string>
+    <string name="SAME_NAME">same_name</string>
+</resources>
